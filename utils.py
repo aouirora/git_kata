@@ -10,7 +10,7 @@ def load_data():
 
 # function to clean data that has as input a pd data frame. it drops missing values, converts categorical variables to lowercase and returns a cleaned data frame.
 def clean_data(df):
-    """Cleans the data by dropping missing values and converting categorical variables to lowercase."""
+    """Cleans the data by dropping missing values and converting categorical variables to lowercase"""
     df = df.copy()
     df = df.dropna()
     for col in df.select_dtypes(include=['object']).columns:
