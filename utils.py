@@ -12,7 +12,7 @@ def load_data():
 def clean_data(df):
     """Cleans the data by dropping missing values and converting categorical variables to lowercase"""
     df = df.copy()
-    df = df.dropna()
+    df = df.dropna(subset=['age', 'embarked'])  # only drop rows missing in key columns
     for col in df.select_dtypes(include=['object']).columns:
         df[col] = df[col].str.lower()
     return df
